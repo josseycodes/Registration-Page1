@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <h1>Registration</h1>
+            <label for="username"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" id="username" required>
+
+            <label for="email"><b>Email</b></label>
+            <input type="email" placeholder="Enter Email" name="email" id="email" required>
+
+            <label for="password"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" id="password" required>
+
+            <label for="confirm-password"><b>Confirm Password</b></label>
+            <input type="password" placeholder="Confirm Password" name="confirm-password" id="confirm-password" required>
+
+            <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+            <button type="button" class="registerbtn" onclick="displayData()">Register</button>
+        </form>
+
+    </div>
+    <div id="display" class="bg"></div>
+
+    <script>
+        function displayData() {
+            const username = document.getElementById("username").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const cpassword = document.getElementById("confirm-password").value;
+            const display = document.getElementById("display");
+
+            display.innerHTML =
+
+                `
+				Username: ${username} 
+				<br>Email: ${email} 
+				<br>Password: ${password}
+				<br>Confirm-password: ${cpassword}
+				`;
+        }
+    </script>
+</body>
+
+</html>
